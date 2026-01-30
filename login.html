@@ -41,6 +41,41 @@
                 Don't have an account? <a href="#" id="show-register" class="text-white fw-bold text-decoration-none">Create account</a>
             </div>
         </section>
+
+        <section id="register-section" class="d-none">
+            <h4 class="fw-bold mb-3">Create Account</h4>
+            <form id="register-form">
+                <div class="mb-3 position-relative">
+                    <label class="small text-secondary mb-1">Full Name</label>
+                    <i class="bi bi-person input-icon"></i>
+                    <input type="text" class="form-control" id="reg-name" required>
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-6 position-relative">
+                        <label class="small text-secondary mb-1">Email</label>
+                        <i class="bi bi-envelope input-icon"></i>
+                        <input type="email" class="form-control" id="reg-email" required>
+                    </div>
+                    <div class="col-6">
+                        <label class="small text-secondary mb-1">Role</label>
+                        <select class="form-select" id="reg-role" required>
+                            <option value="" disabled selected>Select...</option>
+                            <option value="company">Company</option>
+                            <option value="candidate">Candidate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4 position-relative">
+                    <label class="small text-secondary mb-1">Password</label>
+                    <i class="bi bi-lock input-icon"></i>
+                    <input type="password" class="form-control" id="reg-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Create Account</button>
+            </form>
+            <div class="text-center small text-secondary">
+                Already have an account? <a href="#" id="show-login" class="text-white fw-bold text-decoration-none">Sign in</a>
+            </div>
+        </section>
     </main>
     <script src="login-auth.js"></script>
 </body>
