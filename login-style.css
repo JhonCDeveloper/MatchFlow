@@ -54,13 +54,43 @@ body {
     box-shadow: none !important;
 }
 
-/* Adjust padding for the select element without icon */
 .form-select.ps-3 { 
     padding-left: 1rem !important;
 }
 
-/* Focus state styling for better accessibility */
 .form-control:focus, .form-select:focus {
     border-color: var(--btn-start) !important;
     box-shadow: 0 0 0 3px rgba(59, 92, 141, 0.3) !important;
+}
+
+/* Primary Button with Gradient */
+.btn-primary {
+    background: linear-gradient(180deg, var(--btn-start), var(--btn-end));
+    border: 1px solid #1e293b;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #486a9e, var(--btn-start));
+    transform: translateY(-1px);
+}
+
+/* Checkbox Customization */
+.form-check-input {
+    background-color: var(--bg-input);
+    border-color: #1e293b;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--btn-start);
+    border-color: var(--btn-start);
+}
+
+/* Utility class to hide elements */
+.d-none { 
+    display: none !important; 
 }
