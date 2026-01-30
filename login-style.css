@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Color variables for the dark theme */
+    --bg-body: #0b0f19;
+    --bg-card: #151b26;
+    --bg-input: #080a10;
+    --text-main: #fff;
+    --text-sec: #94a3b8;
+    /* Button gradient colors */
+    --btn-start: #3b5c8d;
+    --btn-end: #2a4065;
+}
+
+body {
+    background: radial-gradient(circle at 50% 0%, #1c2638 0%, #0b0f19 70%), var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
