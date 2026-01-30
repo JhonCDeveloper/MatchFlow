@@ -43,3 +43,24 @@ body {
     font-size: 1.1rem;
     pointer-events: none;
 }
+
+/* Bootstrap overrides for dark theme inputs */
+.form-control, .form-select {
+    background: var(--bg-input) !important;
+    border: 1px solid #1e293b !important;
+    color: #fff !important;
+    padding: 0.7rem 0.7rem 0.7rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: none !important;
+}
+
+/* Adjust padding for the select element without icon */
+.form-select.ps-3 { 
+    padding-left: 1rem !important;
+}
+
+/* Focus state styling for better accessibility */
+.form-control:focus, .form-select:focus {
+    border-color: var(--btn-start) !important;
+    box-shadow: 0 0 0 3px rgba(59, 92, 141, 0.3) !important;
+}
