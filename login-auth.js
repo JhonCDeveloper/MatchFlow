@@ -27,7 +27,6 @@ document.getElementById('login-form').onsubmit = async (e) => {
     const pass = document.getElementById('login-password').value;
 
     try {
-        // Fetch user data from JSON Server by email
         const res = await fetch(`${API_URL}?email=${email}`);
         const users = await res.json();
         
@@ -35,13 +34,9 @@ document.getElementById('login-form').onsubmit = async (e) => {
         
         const user = users[0];
         
-        // Simple password validation
         if (user.password === pass) {
-            // Save user session to localStorage
             localStorage.setItem('user', JSON.stringify(user));
             alert(`Welcome ${user.name}!`);
-            
-            // Redirect based on user role
             window.location.href = user.role === 'company' ? 'company-dashboard.html' : 'candidate-profile.html';
         } else {
             alert("Incorrect password.");
@@ -49,5 +44,42 @@ document.getElementById('login-form').onsubmit = async (e) => {
     } catch (err) { 
         console.error(err); 
         alert("Error connecting to server."); 
+    }
+};
+
+// Register Form Submission Handler
+document.getElementById('register-form').onsubmit = async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('reg-email').value;
+    
+    try {
+        // Check for duplicate email
+        const check = await fetch(`${API_URL}?email=${email}`);
+        if ((await check.json()).length) return alert("Email already registered.");
+
+        // Create new user object
+        const newUser = {
+            name: document.getElementById('reg-name').value,
+            email: email,
+            password: document.getElementById('reg-password').value,
+            role: document.getElementById('reg-role').value,
+            openToWork: document.getElementById('reg-role').value === 'candidate' ? false : undefined
+        };
+
+        // Post new user to database
+        await fetch(API_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newUser)
+        });
+        
+        alert("Account created!");
+        loginSec.classList.remove('d-none');
+        regSec.classList.add('d-none');
+        e.target.reset();
+        
+    } catch (err) { 
+        console.error(err); 
+        alert("Registration failed."); 
     }
 };
