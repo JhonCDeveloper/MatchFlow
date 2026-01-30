@@ -1,65 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="/src/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>CAndidate</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar ">
-            <div class="container-fluid ">
-                <div class="navbar-brand d-flex gap-2">
-
-                    <h2 class="nav-title">Crudzaso-MatchFlow</h2>
-                </div>
-                <button type="button" class="btn btn-secondary">Candidato</button>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-brand d-flex gap-2">
+            <h2 class="nav-title">Crudzaso-MatchFlow</h2>
+          </div>
+          <button type="button" class="btn btn-bg">Candidato</button>
+        </div>
+      </nav>
     </header>
     <main class="d-flex gap-4">
-        <sectionn class="container-inicio w-25 d-flex flex-column justify-content-between">
+      <sectionn
+        class="container-inicio w-25 d-flex flex-column justify-content-between"
+      >
+        <div class="d-flex flex-column">
+          <button type="button" class="btn" data-bs-toggle="button">
+            Inicio
+          </button>
+          <button type="button" class="btn" data-bs-toggle="button">
+            Ofertas de trabajo
+          </button>
+          <button type="button" class="btn" data-bs-toggle="button">
+            Matches
+          </button>
+          <button type="button" class="btn" data-bs-toggle="button">
+            Reservas
+          </button>
+          <hr />
+        </div>
+        <div class="user m-2">
+          <hr />
+          <div class="d-flex gap-2">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWC1Pr9W4mq-MfwEdQttYDi2POCXkVuPjb_w&s"
+              alt="perfil"
+              width="50px"
+              height="50px"
+              style="border-radius: 50%"
+            />
             <div class="d-flex flex-column">
-                <button type="button" class="btn" data-bs-toggle="button">Inicio</button>
-                <button type="button" class="btn" data-bs-toggle="button">Ofertas de trabajo</button>
-                <button type="button" class="btn" data-bs-toggle="button">Matches</button>
-                <button type="button" class="btn" data-bs-toggle="button">Reservas</button>
-                <hr>
+              <h5>Elena Ramires</h5>
+              <p>Software Engimmer</p>
             </div>
-            <div class="user m-2">
-                <hr>
-                <div class="d-flex gap-2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWC1Pr9W4mq-MfwEdQttYDi2POCXkVuPjb_w&s"
-                        alt="perfil" width="50px" height="50px" style="border-radius:  50%;">
-                    <div class="d-flex flex-column">
-                        <h5>Elena Ramires</h5>
-                        <p>Software Engimmer</p>
-                    </div>
-                </div>
-                <button class="btn btn-outline-success">Disponible</button>
+          </div>
+          <button class="btn btn-outline-success">Disponible</button>
+        </div>
+      </sectionn>
+      <sectionn class="container w-75 m-3">
+        <h1>Plataforma de contratacion por primera option</h1>
+        <!--Visibilidad activa o desactiva-->
+        <div class="card">
+          <div class="card-body  d-flex justify-content-between">
+            <div>
+                <h3 class="card-title">Abierto al Trabajo</h3>
+            <p class="card-text">Visibilidad activa para empresas</p>
             </div>
-        </sectionn>
-        <sectionn class="container-start w-75">
-            <h1>Plataforma de contratacion por primera option</h1>
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Abierto al Trabajo</h5>
-                    <p class="card-text">Visibilidad activa para empresas/p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+            <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="checkNativeSwitch"
+              switch
+            />
+            <label class="form-check-label" for="checkNativeSwitch">
+            </label>
+          </div>
+          </div>
+        </div>
+        <!--Ofertas de trabajos-->
+        <div class="d-flex justify-content-between mt-5">
+            <h3>Ofertas de Tabajo</h3>
+            <p>Ver Detalles...</p>
+        </div>
+            <div class="container">
+                 <div class="card">
+          <div class="card-body  d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="card-title">Backend Developer</h3>
+            <p class="card-text">San Francisco</p>
             </div>
-        </sectionn>
+            <div>
+                <p style="color: #CBD5E1;">TechSoft</p>
+                <p>$60.000/admaz</p>
+            </div>
+            <div >
+            <button class="btn btn-bg" >Ver Detalles</button>
+          </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body  d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="card-title">Full Stack Developer</h3>
+            <p class="card-text">New York</p>
+            </div>
+            <div>
+                <p style="color: #CBD5E1;">CodeWorks</p>
+                <p>$65.000/admaz</p>
+            </div>
+            <div >
+            <button class="btn btn-bg" >Ver Detalles</button>
+          </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body  d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="card-title">DevOps Engineer</h3>
+            <p class="card-text">Remoto</p>
+            </div>
+            <div>
+                <p style="color: #CBD5E1;">Innovatech</p>
+                <p>$105.000/admaz</p>
+            </div>
+            <div >
+            <button class="btn btn-bg" >Ver Detalles</button>
+          </div>
+          </div>
+        </div>
+            </div>
+            <!--Matches-->
+        <div class="d-flex justify-content-between mt-5">
+            <h3>Mis Matches Actuales</h3>
+            <p>Ver Detalles...</p>
+        </div>
+            <div class="container">
+                 <div class="card">
+          <div class="card-body  d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="card-title">Node JS Developer</h3>
+            <p class="card-text">BrightApps - Seathe</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-success">Contactando</button>
+            </div>
+            <div >
+            <button class="btn btn-bg" >Ver Perfil</button>
+          </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body  d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="card-title">Node JS Developer</h3>
+            <p class="card-text">BrightApps - Seathe</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-success">Contactando</button>
+            </div>
+            <div >
+            <button class="btn btn-bg" >Ver Perfil</button>
+          </div>
+          </div>
+        </div>
+            </div>
+      </sectionn>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
