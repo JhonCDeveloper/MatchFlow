@@ -1,0 +1,56 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "MatchFlow Company",
+      "description": "Tech hiring company"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "title": "Frontend Developer",
+      "location": "Remote",
+      "status": "closed"
+    },
+    {
+      "id": 2,
+      "companyId": 1,
+      "title": "Backend Developer",
+      "location": "New York",
+      "status": "closed"
+    }
+  ],
+  "applications": [
+    {
+      "id": 1,
+      "jobId": 1,
+      "candidateId": 3
+    },
+    {
+      "id": 2,
+      "jobId": 1,
+      "candidateId": 4
+    },
+    {
+      "id": 3,
+      "jobId": 2,
+      "candidateId": 5
+    }
+  ],
+  "interviews": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "candidateId": 3,
+      "status": "scheduled"
+    },
+    {
+      "id": 2,
+      "companyId": 1,
+      "candidateId": 4,
+      "status": "completed"
+    }
+  ]
+}
