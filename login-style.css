@@ -22,3 +22,24 @@ body {
     justify-content: center;
     margin: 0;
 }
+
+/* Auth Card Container */
+.auth-card {
+    background: var(--bg-card);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px -10px rgba(0,0,0,0.9);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+}
+
+/* Icons inside input fields */
+.input-icon {
+    position: absolute;
+    top: 38px;
+    left: 12px;
+    color: #475569;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
