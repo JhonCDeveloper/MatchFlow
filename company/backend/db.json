@@ -149,44 +149,28 @@
   ],
   "matches": [
     {
-      "id": 1,
       "companyId": 1,
       "jobId": 1,
       "candidateId": 3,
-      "status": "hired",
-      "createdAt": "2026-01-28T10:00:00Z"
+      "status": "contacted",
+      "createdAt": "2026-01-31T02:05:40.811Z",
+      "id": 1
     },
     {
-      "id": 2,
       "companyId": 1,
-      "jobId": 2,
+      "jobId": 3,
       "candidateId": 5,
-      "status": "hired",
-      "createdAt": "2026-01-29T14:30:00Z"
-    },
-    {
-      "companyId": 1,
-      "jobId": 1,
-      "candidateId": 4,
-      "status": "hired",
-      "createdAt": "2026-01-31T01:28:02.323Z",
-      "id": 3
+      "status": "contacted",
+      "createdAt": "2026-01-31T02:10:59.368Z",
+      "id": 2
     },
     {
       "companyId": 1,
       "jobId": 3,
       "candidateId": 6,
-      "status": "discarded",
-      "createdAt": "2026-01-31T01:28:38.756Z",
-      "id": 4
-    },
-    {
-      "companyId": 1,
-      "jobId": 3,
-      "candidateId": 5,
-      "status": "hired",
-      "createdAt": "2026-01-31T01:36:15.260Z",
-      "id": 5
+      "status": "contacted",
+      "createdAt": "2026-01-31T02:11:38.968Z",
+      "id": 3
     }
   ],
   "reservations": [
@@ -221,6 +205,54 @@
       "isActive": false,
       "createdAt": "2026-01-31T01:36:15.278Z",
       "id": 4
+    },
+    {
+      "companyId": 1,
+      "jobId": 2,
+      "candidateId": 4,
+      "isActive": true,
+      "createdAt": "2026-01-31T01:47:32.331Z",
+      "id": 5
+    },
+    {
+      "companyId": 1,
+      "jobId": 2,
+      "candidateId": 6,
+      "isActive": false,
+      "createdAt": "2026-01-31T01:59:33.069Z",
+      "id": 6
+    },
+    {
+      "companyId": 1,
+      "jobId": 2,
+      "candidateId": 3,
+      "isActive": false,
+      "createdAt": "2026-01-31T02:01:52.750Z",
+      "id": 7
+    },
+    {
+      "companyId": 1,
+      "jobId": 1,
+      "candidateId": 3,
+      "isActive": true,
+      "createdAt": "2026-01-31T02:05:40.829Z",
+      "id": 8
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 5,
+      "isActive": true,
+      "createdAt": "2026-01-31T02:10:59.386Z",
+      "id": 9
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 6,
+      "isActive": true,
+      "createdAt": "2026-01-31T02:11:38.981Z",
+      "id": 10
     }
   ],
   "messages": [

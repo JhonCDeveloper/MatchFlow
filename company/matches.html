@@ -432,7 +432,17 @@
                 <p class="text-text-muted text-sm">${job.title}</p>
                 ${
                   canSeeContact
-                    ? `<p class="text-text-muted text-xs mt-1"><i class="fa-solid fa-envelope"></i> ${candidate.email}</p>`
+                    ? `<p class="text-text-muted text-xs mt-1"><i class="fa-solid fa-envelope"></i> ${candidate.email}</p>
+                    <a
+                      href="#"
+                      target="_blank"
+                      onclick="event.stopPropagation(); openWhatsApp('${candidate.whatsapp || candidate.phone || ''}');"
+                      class="text-text-muted text-xs mt-1 flex items-center gap-2 hover:underline"
+                      title="Abrir WhatsApp"
+                    >
+                      <i class="fa-brands fa-whatsapp text-green-500"></i>
+                      <span>WhatsApp</span>
+                    </a>`
                     : `<p class="text-text-muted text-xs mt-1"><i class="fa-solid fa-lock"></i> Contacto oculto</p>`
                 }
                 <p class="${statusColors[match.status]} text-sm font-medium mt-1">
@@ -514,6 +524,17 @@
         const user = JSON.parse(localStorage.getItem("user"));
         await loadMatches(user.id);
         updateFilterButtons();
+      }
+
+
+      // Abrir WhatsApp (simple). Si no hay número, muestra alerta.
+      function openWhatsApp(rawNumber) {
+        const number = (rawNumber || "").toString().replace(/\D/g, "");
+        if (!number) {
+          alert("WhatsApp no disponible para este candidato.");
+          return;
+        }
+        window.open(`https://wa.me/${number}`, "_blank");
       }
 
       function updateFilterButtons() {
