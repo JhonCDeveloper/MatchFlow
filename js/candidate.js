@@ -1,3 +1,41 @@
+const local = JSON.parse(localStorage.getItem("user"));
+
+if(!local){
+  window.location.href = '../login.html';
+}
+//Info the user
+const nameUser =document.getElementById("nameProfile")
+if(nameUser){
+nameUser.textContent = local.name
+}
+
+//button Home
+document.getElementById("btnHome").addEventListener("click", () => {
+  document.getElementById("home").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+//button offers Work
+document.getElementById("btnWork").addEventListener("click", () => {
+  document.getElementById("work").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+//button Matches
+document.getElementById("btnMatches").addEventListener("click", () => {
+  document.getElementById("matches").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+//button reservations
+document.getElementById("btnReservations").addEventListener("click", () => {
+  document.getElementById("reservations").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+
+//Eveto de check para que aparezca las ofertas
 const checkActive = document.getElementById("check");
 const containerOfertas = document.querySelector(".container-ofertas");
 
@@ -16,7 +54,7 @@ checkActive.addEventListener("change", function () {
             <p>$60.000/admaz</p>
           </div>
           <div>
-            <button class="btn btn-bg">Ver Detalles</button>
+            <button class="btn btn-bg">See Details</button>
           </div>
         </div>
       </div>
@@ -32,7 +70,7 @@ checkActive.addEventListener("change", function () {
             <p>$65.000/admaz</p>
           </div>
           <div>
-            <button class="btn btn-bg">Ver Detalles</button>
+            <button class="btn btn-bg">See Details</button>
           </div>
         </div>
       </div>
@@ -48,7 +86,7 @@ checkActive.addEventListener("change", function () {
             <p>$105.000/admaz</p>
           </div>
           <div>
-            <button class="btn btn-bg">Ver Detalles</button>
+            <button class="btn btn-bg">See Details</button>
           </div>
         </div>
       </div>
@@ -58,6 +96,8 @@ checkActive.addEventListener("change", function () {
     containerOfertas.innerHTML = "";
   }
 });
+
+
 
 
       

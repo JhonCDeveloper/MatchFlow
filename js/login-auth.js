@@ -37,7 +37,7 @@ document.getElementById('login-form').onsubmit = async (e) => {
         if (user.password === pass) {
             localStorage.setItem('user', JSON.stringify(user));
             alert(`Welcome ${user.name}!`);
-            window.location.href = user.role === 'company' ? 'company-dashboard.html' : 'candidate-profile.html';
+            window.location.href = user.role === 'company' ? 'company-dashboard.html' : '../candidate.html';
         } else {
             alert("Incorrect password.");
         }
