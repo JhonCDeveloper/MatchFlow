@@ -12,14 +12,108 @@
       "companyId": 1,
       "title": "Frontend Developer",
       "location": "Remote",
-      "status": "closed"
+      "status": "open"
     },
     {
       "id": 2,
       "companyId": 1,
       "title": "Backend Developer",
       "location": "New York",
-      "status": "closed"
+      "status": "open"
+    },
+    {
+      "id": 3,
+      "companyId": 1,
+      "title": "Full Stack Developer",
+      "location": "Hybrid - Medellín",
+      "status": "open"
+    }
+  ],
+  "candidates": [
+    {
+      "id": 3,
+      "name": "María García",
+      "email": "maria.garcia@example.com",
+      "phone": "+57 300 123 4567",
+      "whatsapp": "+573001234567",
+      "skills": [
+        "JavaScript",
+        "React",
+        "CSS",
+        "HTML",
+        "Tailwind"
+      ],
+      "openToWork": true
+    },
+    {
+      "id": 4,
+      "name": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "phone": "+57 310 987 6543",
+      "whatsapp": "+573109876543",
+      "skills": [
+        "JavaScript",
+        "Vue",
+        "Tailwind",
+        "TypeScript"
+      ],
+      "openToWork": true
+    },
+    {
+      "id": 5,
+      "name": "Ana Martínez",
+      "email": "ana.martinez@example.com",
+      "phone": "+57 320 555 1234",
+      "whatsapp": "+573205551234",
+      "skills": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      "openToWork": true
+    },
+    {
+      "id": 6,
+      "name": "Carlos Rodríguez",
+      "email": "carlos.rodriguez@example.com",
+      "phone": "+57 315 444 5678",
+      "whatsapp": "+573154445678",
+      "skills": [
+        "React",
+        "Node.js",
+        "GraphQL",
+        "AWS"
+      ],
+      "openToWork": true
+    },
+    {
+      "id": 7,
+      "name": "Laura González",
+      "email": "laura.gonzalez@example.com",
+      "phone": "+57 305 777 8899",
+      "whatsapp": "+573057778899",
+      "skills": [
+        "Python",
+        "Django",
+        "Docker",
+        "Kubernetes"
+      ],
+      "openToWork": false
+    },
+    {
+      "id": 8,
+      "name": "Pedro Sánchez",
+      "email": "pedro.sanchez@example.com",
+      "phone": "+57 318 222 3333",
+      "whatsapp": "+573182223333",
+      "skills": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "NGRX"
+      ],
+      "openToWork": false
     }
   ],
   "applications": [
@@ -51,6 +145,106 @@
       "companyId": 1,
       "candidateId": 4,
       "status": "completed"
+    }
+  ],
+  "matches": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "jobId": 1,
+      "candidateId": 3,
+      "status": "hired",
+      "createdAt": "2026-01-28T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "companyId": 1,
+      "jobId": 2,
+      "candidateId": 5,
+      "status": "hired",
+      "createdAt": "2026-01-29T14:30:00Z"
+    },
+    {
+      "companyId": 1,
+      "jobId": 1,
+      "candidateId": 4,
+      "status": "hired",
+      "createdAt": "2026-01-31T01:28:02.323Z",
+      "id": 3
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 6,
+      "status": "discarded",
+      "createdAt": "2026-01-31T01:28:38.756Z",
+      "id": 4
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 5,
+      "status": "hired",
+      "createdAt": "2026-01-31T01:36:15.260Z",
+      "id": 5
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "jobId": 1,
+      "candidateId": 3,
+      "isActive": false,
+      "createdAt": "2026-01-28T10:00:00Z"
+    },
+    {
+      "companyId": 1,
+      "jobId": 1,
+      "candidateId": 4,
+      "isActive": false,
+      "createdAt": "2026-01-31T01:28:02.342Z",
+      "id": 2
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 6,
+      "isActive": false,
+      "createdAt": "2026-01-31T01:28:38.779Z",
+      "id": 3
+    },
+    {
+      "companyId": 1,
+      "jobId": 3,
+      "candidateId": 5,
+      "isActive": false,
+      "createdAt": "2026-01-31T01:36:15.278Z",
+      "id": 4
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "matchId": 1,
+      "senderId": 1,
+      "senderType": "company",
+      "recipientId": 3,
+      "recipientType": "candidate",
+      "content": "Hola María, nos gustaría agendar una entrevista contigo.",
+      "createdAt": "2026-01-28T10:15:00Z",
+      "read": true
+    },
+    {
+      "id": 2,
+      "matchId": 1,
+      "senderId": 3,
+      "senderType": "candidate",
+      "recipientId": 1,
+      "recipientType": "company",
+      "content": "¡Hola! Me encantaría. ¿Cuándo tienen disponibilidad?",
+      "createdAt": "2026-01-28T11:30:00Z",
+      "read": true
     }
   ]
 }
