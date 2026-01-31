@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches - MatchFlow</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-background-app text-text-primary font-sans">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 bg-background-sidebar p-6 flex flex-col justify-between"
+      >
+        <div>
+          <h1 class="text-xl font-semibold mb-8">MatchFlow</h1>
+
+          <nav class="space-y-2 text-text-secondary">
+            <a
+              href="company-dashboard.html"
+              class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-card"
+            >
+              <i class="fa-solid fa-chart-line"></i> Dashboard
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-card"
+            >
+              <i class="fa-solid fa-briefcase"></i> Jobs
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-card"
+            >
+              <i class="fa-solid fa-user-group"></i> Candidates
+            </a>
+
+            <a
+              href="matches.html"
+              class="flex items-center gap-3 px-3 py-2 rounded-lg bg-background-card text-white"
+            >
+              <i class="fa-solid fa-handshake"></i> Matches
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-background-card"
+            >
+              <i class="fa-solid fa-calendar-check"></i> Interviews
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-3 mt-10">
+          <div class="w-10 h-10 bg-background-card rounded-full"></div>
+          <div>
+            <p class="text-sm font-medium">Company Name</p>
+            <p class="text-xs text-text-muted">Recruiter</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8 space-y-8">
+        <!-- Header -->
+        <div>
+          <h2 class="text-3xl font-bold">Matches</h2>
+          <p class="text-text-muted mt-1">
+            Gestiona tus candidatos seleccionados
+          </p>
+        </div>
+
+        <!-- Sección para Crear Match Simple -->
+        <section class="bg-background-card p-6 rounded-xl shadow-card">
+          <h4 class="font-semibold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-plus-circle text-brand"></i>
+            Crear Nuevo Match
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+            <div>
+              <label class="block text-sm text-text-muted mb-2"
+                >Selecciona Oferta</label
+              >
+              <select
+                id="job-select"
+                class="w-full bg-background-app border border-gray-700 rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:border-brand"
+              >
+                <option value="">-- Selecciona una oferta --</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm text-text-muted mb-2"
+                >Selecciona Candidato</label
+              >
+              <select
+                id="candidate-select"
+                class="w-full bg-background-app border border-gray-700 rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:border-brand"
+              >
+                <option value="">-- Selecciona un candidato --</option>
+              </select>
+            </div>
+
+            <div>
+              <button
+                onclick="createMatchSimple()"
+                class="w-full bg-brand hover:bg-brand-hover px-5 py-2 rounded-lg text-white flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-handshake"></i> Crear Match
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Filtros por estado -->
+        <section class="flex gap-3 flex-wrap">
+          <button
+            onclick="filterByStatus('all')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-all"
+          >
+            Todos
+          </button>
+          <button
+            onclick="filterByStatus('pending')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-pending"
+          >
+            Pendientes
+          </button>
+          <button
+            onclick="filterByStatus('contacted')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-contacted"
+          >
+            Contactados
+          </button>
+          <button
+            onclick="filterByStatus('interview')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-interview"
+          >
+            En Entrevista
+          </button>
+          <button
+            onclick="filterByStatus('hired')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-hired"
+          >
+            Contratados
+          </button>
+          <button
+            onclick="filterByStatus('discarded')"
+            class="px-4 py-2 bg-background-card rounded-lg text-sm hover:bg-background-cardHover"
+            id="filter-discarded"
+          >
+            Descartados
+          </button>
+        </section>
+
+        <!-- Lista de Matches -->
+        <section class="bg-background-card p-6 rounded-xl shadow-card">
+          <h4 class="font-semibold mb-4">Mis Matches</h4>
+          <div id="matches-list" class="space-y-3">
+            <!-- Los matches se cargarán aquí dinámicamente -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal de detalles del Match con Mensajería -->
+    <div
+      id="match-detail-modal"
+      class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-background-card text-text-primary rounded-xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-xl"
+      >
+        <!-- Header del modal -->
+        <div
+          class="p-6 border-b border-gray-700 flex justify-between items-center"
+        >
+          <h3 class="text-xl font-semibold" id="match-detail-title">
+            Detalles del Match
+          </h3>
+          <button
+            onclick="hideMatchDetailModal()"
+            class="text-text-muted hover:text-white"
+          >
+            <i class="fa-solid fa-times text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Contenido del modal -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+          <!-- Información del candidato -->
+          <div
+            id="match-detail-candidate"
+            class="bg-background-app p-4 rounded-lg"
+          >
+            <!-- Se llena dinámicamente -->
+          </div>
+
+          <!-- Sección de contacto (solo visible si estado >= contacted) -->
+          <div
+            id="match-detail-contact"
+            class="hidden bg-background-app p-4 rounded-lg"
+          >
+            <!-- Se llena dinámicamente -->
+          </div>
+
+          <!-- Sistema de mensajería interno -->
+          <div id="match-detail-messaging" class="hidden">
+            <h4 class="font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-comments"></i>
+              Mensajes Internos
+            </h4>
+
+            <div
+              class="bg-background-app rounded-lg p-4 mb-3 max-h-96 overflow-y-auto"
+              id="messages-container"
+            >
+              <!-- Mensajes se cargan aquí -->
+            </div>
+
+            <div class="flex gap-2">
+              <input
+                type="text"
+                id="message-input"
+                placeholder="Escribe un mensaje..."
+                class="flex-1 bg-background-app border border-gray-700 rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:border-brand"
+              />
+              <button
+                onclick="sendMessage()"
+                class="bg-brand hover:bg-brand-hover px-4 py-2 rounded-lg text-white"
+              >
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer con acciones -->
+        <div
+          id="match-detail-actions"
+          class="p-6 border-t border-gray-700 flex gap-3"
+        >
+          <!-- Botones de acción se llenan dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/match-logic.js"></script>
+    <script>
+      // Variable global para filtro actual
+      let currentFilter = "all";
+      let currentMatchId = null;
+
+      // Inicializar al cargar la página
+      document.addEventListener("DOMContentLoaded", async () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (!user) {
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ id: 1, name: "MatchFlow Company" }),
+          );
+          window.location.reload();
+          return;
+        }
+
+        await loadMatches(user.id);
+        await loadJobsDropdown();
+        await loadCandidatesDropdown();
+
+        // Activar filtro "all" visualmente
+        updateFilterButtons();
+      });
+
+      // Cargar ofertas en el dropdown
+      async function loadJobsDropdown() {
+        try {
+          const user = JSON.parse(localStorage.getItem("user"));
+          const jobs = await fetch(
+            `${API_URL}/jobs?companyId=${user.id}&status=open`,
+          ).then((r) => r.json());
+
+          const select = document.getElementById("job-select");
+          select.innerHTML =
+            '<option value="">-- Selecciona una oferta --</option>';
+
+          jobs.forEach((job) => {
+            const option = document.createElement("option");
+            option.value = job.id;
+            option.textContent = `${job.title} (${job.location})`;
+            select.appendChild(option);
+          });
+        } catch (error) {
+          console.error("Error cargando ofertas:", error);
+        }
+      }
+
+      // Cargar candidatos en el dropdown
+      async function loadCandidatesDropdown() {
+        try {
+          const candidates = await fetch(
+            `${API_URL}/candidates?openToWork=true`,
+          ).then((r) => r.json());
+
+          const select = document.getElementById("candidate-select");
+          select.innerHTML =
+            '<option value="">-- Selecciona un candidato --</option>';
+
+          for (const candidate of candidates) {
+            const reservation = await checkCandidateReservation(candidate.id);
+
+            const option = document.createElement("option");
+            option.value = candidate.id;
+            option.textContent = `${candidate.name}${reservation ? " (🔒 Reservado)" : ""}`;
+
+            if (reservation) {
+              option.disabled = true;
+              option.style.color = "#94A3B8";
+            }
+
+            select.appendChild(option);
+          }
+        } catch (error) {
+          console.error("Error cargando candidatos:", error);
+        }
+      }
+
+      // Crear match simple
+      async function createMatchSimple() {
+        const jobId = parseInt(document.getElementById("job-select").value);
+        const candidateId = parseInt(
+          document.getElementById("candidate-select").value,
+        );
+
+        if (!jobId) {
+          alert("Por favor selecciona una oferta");
+          return;
+        }
+
+        if (!candidateId) {
+          alert("Por favor selecciona un candidato");
+          return;
+        }
+
+        const user = JSON.parse(localStorage.getItem("user"));
+        const match = await createMatch(user.id, jobId, candidateId);
+
+        if (match) {
+          alert("Match creado exitosamente");
+
+          // Limpiar selects
+          document.getElementById("job-select").value = "";
+          document.getElementById("candidate-select").value = "";
+
+          // Recargar datos
+          await loadMatches(user.id);
+          await loadCandidatesDropdown();
+        } else {
+          // El error ya se muestra en createMatch()
+        }
+      }
+
+      // Cargar y renderizar matches
+      async function loadMatches(companyId) {
+        const matches = await getCompanyMatches(companyId);
+        const container = document.getElementById("matches-list");
+        if (!container) return;
+
+        let filteredMatches = matches;
+        if (currentFilter !== "all") {
+          filteredMatches = matches.filter((m) => m.status === currentFilter);
+        }
+
+        container.innerHTML = "";
+
+        if (filteredMatches.length === 0) {
+          container.innerHTML =
+            '<p class="text-text-muted">No hay matches con este filtro</p>';
+          return;
+        }
+
+        const candidates = await fetch(`${API_URL}/candidates`).then((r) =>
+          r.json(),
+        );
+        const jobs = await fetch(`${API_URL}/jobs`).then((r) => r.json());
+
+        filteredMatches.forEach((match) => {
+          const candidate = candidates.find((c) => c.id === match.candidateId);
+          const job = jobs.find((j) => j.id === match.jobId);
+
+          if (!candidate || !job) return;
+
+          const matchCard = document.createElement("div");
+          matchCard.className =
+            "bg-background-app p-4 rounded-lg cursor-pointer hover:bg-background-cardHover transition";
+          matchCard.onclick = () => openMatchDetail(match.id);
+
+          const statusColors = {
+            pending: "text-gray-400",
+            contacted: "text-blue-400",
+            interview: "text-yellow-400",
+            hired: "text-green-400",
+            discarded: "text-red-400",
+          };
+
+          // Determinar si mostrar contacto
+          const canSeeContact = ["contacted", "interview", "hired"].includes(
+            match.status,
+          );
+
+          matchCard.innerHTML = `
+            <div class="flex justify-between items-center">
+              <div class="flex-1">
+                <p class="font-medium">${candidate.name}</p>
+                <p class="text-text-muted text-sm">${job.title}</p>
+                ${
+                  canSeeContact
+                    ? `<p class="text-text-muted text-xs mt-1"><i class="fa-solid fa-envelope"></i> ${candidate.email}</p>
+                    <a
+                      href="#"
+                      target="_blank"
+                      onclick="event.stopPropagation(); openWhatsApp('${candidate.whatsapp || candidate.phone || ''}');"
+                      class="text-text-muted text-xs mt-1 flex items-center gap-2 hover:underline"
+                      title="Abrir WhatsApp"
+                    >
+                      <i class="fa-brands fa-whatsapp text-green-500"></i>
+                      <span>WhatsApp</span>
+                    </a>`
+                    : `<p class="text-text-muted text-xs mt-1"><i class="fa-solid fa-lock"></i> Contacto oculto</p>`
+                }
+                <p class="${statusColors[match.status]} text-sm font-medium mt-1">
+                  ${match.status.toUpperCase()}
+                </p>
+              </div>
+              <div class="flex gap-2">
+                ${getMatchActionButtons(match)}
+              </div>
+            </div>
+          `;
+
+          container.appendChild(matchCard);
+        });
+      }
+
+      // Generar botones de acción
+      function getMatchActionButtons(match) {
+        const buttons = [];
+
+        if (match.status === "pending") {
+          buttons.push(`
+            <button onclick="event.stopPropagation(); handleAdvanceMatch(${match.id}, 'contacted')"
+              class="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded text-sm">
+              Contactar
+            </button>
+          `);
+        }
+
+        if (match.status === "contacted") {
+          buttons.push(`
+            <button onclick="event.stopPropagation(); handleAdvanceMatch(${match.id}, 'interview')"
+              class="px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded text-sm">
+              Entrevista
+            </button>
+          `);
+        }
+
+        if (match.status === "interview") {
+          buttons.push(`
+            <button onclick="event.stopPropagation(); handleAdvanceMatch(${match.id}, 'hired')"
+              class="px-3 py-1 bg-green-600 hover:bg-green-700 rounded text-sm">
+              Contratar
+            </button>
+          `);
+        }
+
+        if (["pending", "contacted", "interview"].includes(match.status)) {
+          buttons.push(`
+            <button onclick="event.stopPropagation(); handleAdvanceMatch(${match.id}, 'discarded')"
+              class="px-3 py-1 bg-red-600 hover:bg-red-700 rounded text-sm">
+              Descartar
+            </button>
+          `);
+        }
+
+        return buttons.join("");
+      }
+
+      // Manejar avance de match
+      async function handleAdvanceMatch(matchId, newStatus) {
+        const updated = await updateMatchStatus(matchId, newStatus);
+        if (updated) {
+          const user = JSON.parse(localStorage.getItem("user"));
+          await loadMatches(user.id);
+          await loadCandidatesDropdown();
+
+          // Si el modal está abierto, recargarlo
+          if (currentMatchId === matchId) {
+            await openMatchDetail(matchId);
+          }
+        } else {
+          alert("No se pudo actualizar el estado del match");
+        }
+      }
+
+      async function filterByStatus(status) {
+        currentFilter = status;
+        const user = JSON.parse(localStorage.getItem("user"));
+        await loadMatches(user.id);
+        updateFilterButtons();
+      }
+
+
+      // Abrir WhatsApp (simple). Si no hay número, muestra alerta.
+      function openWhatsApp(rawNumber) {
+        const number = (rawNumber || "").toString().replace(/\D/g, "");
+        if (!number) {
+          alert("WhatsApp no disponible para este candidato.");
+          return;
+        }
+        window.open(`https://wa.me/${number}`, "_blank");
+      }
+
+      function updateFilterButtons() {
+        // Remover clase activa de todos
+        document.querySelectorAll('[id^="filter-"]').forEach((btn) => {
+          btn.classList.remove("bg-brand", "text-white");
+          btn.classList.add("bg-background-card");
+        });
+
+        // Agregar clase activa al seleccionado
+        const activeBtn = document.getElementById(`filter-${currentFilter}`);
+        if (activeBtn) {
+          activeBtn.classList.remove("bg-background-card");
+          activeBtn.classList.add("bg-brand", "text-white");
+        }
+      }
+
+      // ========== FUNCIONES DEL MODAL DE DETALLES ==========
+
+      async function openMatchDetail(matchId) {
+        currentMatchId = matchId;
+
+        const match = await fetch(`${API_URL}/matches/${matchId}`).then((r) =>
+          r.json(),
+        );
+        const candidate = await fetch(
+          `${API_URL}/candidates/${match.candidateId}`,
+        ).then((r) => r.json());
+        const job = await fetch(`${API_URL}/jobs/${match.jobId}`).then((r) =>
+          r.json(),
+        );
+
+        // Título
+        document.getElementById("match-detail-title").textContent =
+          `Match: ${candidate.name} - ${job.title}`;
+
+        // Información del candidato
+        const canSeeContact = ["contacted", "interview", "hired"].includes(
+          match.status,
+        );
+
+        document.getElementById("match-detail-candidate").innerHTML = `
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h4 class="font-semibold text-lg mb-2">${candidate.name}</h4>
+              <p class="text-text-muted text-sm mb-2">Aplicando a: <span class="text-brand">${job.title}</span></p>
+              <p class="text-text-muted text-sm mb-2">Skills: ${candidate.skills.join(", ")}</p>
+              
+              ${
+                !canSeeContact
+                  ? `<div class="mt-3 p-3 bg-yellow-900/20 border border-yellow-700 rounded">
+                    <i class="fa-solid fa-lock text-yellow-500"></i>
+                    <span class="text-yellow-200 text-sm ml-2">
+                      Información de contacto oculta. Cambia el estado a "Contactado" para ver los datos.
+                    </span>
+                  </div>`
+                  : ""
+              }
+            </div>
+            <span class="px-3 py-1 rounded text-sm ${
+              match.status === "pending"
+                ? "bg-gray-700 text-gray-300"
+                : match.status === "contacted"
+                  ? "bg-blue-700 text-blue-200"
+                  : match.status === "interview"
+                    ? "bg-yellow-700 text-yellow-200"
+                    : match.status === "hired"
+                      ? "bg-green-700 text-green-200"
+                      : "bg-red-700 text-red-200"
+            }">
+              ${match.status.toUpperCase()}
+            </span>
+          </div>
+        `;
+
+        // Sección de contacto (solo si está contactado o más)
+        const contactSection = document.getElementById("match-detail-contact");
+        if (canSeeContact) {
+          contactSection.classList.remove("hidden");
+          contactSection.innerHTML = `
+            <h4 class="font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-address-book"></i>
+              Información de Contacto
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-brand"></i>
+                <div>
+                  <p class="text-xs text-text-muted">Email</p>
+                  <a href="mailto:${candidate.email}" class="text-brand hover:underline">${candidate.email}</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-green-500"></i>
+                <div>
+                  <p class="text-xs text-text-muted">WhatsApp</p>
+                  <a href="https://wa.me/${candidate.whatsapp ? candidate.whatsapp.replace(/\s/g, "") : ""}" target="_blank" class="text-green-500 hover:underline">
+                    ${candidate.phone || candidate.whatsapp || "No disponible"}
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+
+          // Mostrar mensajería
+          document
+            .getElementById("match-detail-messaging")
+            .classList.remove("hidden");
+          await loadMessages(matchId);
+        } else {
+          contactSection.classList.add("hidden");
+          document
+            .getElementById("match-detail-messaging")
+            .classList.add("hidden");
+        }
+
+        // Botones de acción
+        const actionsContainer = document.getElementById(
+          "match-detail-actions",
+        );
+        actionsContainer.innerHTML = getMatchDetailActions(match);
+
+        // Mostrar modal
+        document
+          .getElementById("match-detail-modal")
+          .classList.remove("hidden");
+      }
+
+      function hideMatchDetailModal() {
+        document.getElementById("match-detail-modal").classList.add("hidden");
+        currentMatchId = null;
+      }
+
+      function getMatchDetailActions(match) {
+        const buttons = [];
+
+        if (match.status === "pending") {
+          buttons.push(`
+            <button onclick="handleAdvanceMatchFromDetail(${match.id}, 'contacted')"
+              class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white">
+              <i class="fa-solid fa-phone"></i> Contactar
+            </button>
+          `);
+        }
+
+        if (match.status === "contacted") {
+          buttons.push(`
+            <button onclick="handleAdvanceMatchFromDetail(${match.id}, 'interview')"
+              class="flex-1 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded text-white">
+              <i class="fa-solid fa-calendar"></i> Agendar Entrevista
+            </button>
+          `);
+        }
+
+        if (match.status === "interview") {
+          buttons.push(`
+            <button onclick="handleAdvanceMatchFromDetail(${match.id}, 'hired')"
+              class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 rounded text-white">
+              <i class="fa-solid fa-check"></i> Contratar
+            </button>
+          `);
+        }
+
+        if (["pending", "contacted", "interview"].includes(match.status)) {
+          buttons.push(`
+            <button onclick="handleAdvanceMatchFromDetail(${match.id}, 'discarded')"
+              class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 rounded text-white">
+              <i class="fa-solid fa-times"></i> Descartar
+            </button>
+          `);
+        }
+
+        buttons.push(`
+          <button onclick="hideMatchDetailModal()"
+            class="px-4 py-2 border border-gray-700 hover:bg-background-cardHover rounded text-white">
+            Cerrar
+          </button>
+        `);
+
+        return buttons.join("");
+      }
+
+      async function handleAdvanceMatchFromDetail(matchId, newStatus) {
+        await handleAdvanceMatch(matchId, newStatus);
+      }
+
+      // ========== SISTEMA DE MENSAJERÍA ==========
+
+      async function loadMessages(matchId) {
+        const messages = await fetch(
+          `${API_URL}/messages?matchId=${matchId}`,
+        ).then((r) => r.json());
+        const container = document.getElementById("messages-container");
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        container.innerHTML = "";
+
+        if (messages.length === 0) {
+          container.innerHTML =
+            '<p class="text-text-muted text-sm text-center py-4">No hay mensajes aún. ¡Inicia la conversación!</p>';
+          return;
+        }
+
+        messages.forEach((msg) => {
+          const isMyMessage =
+            msg.senderType === "company" && msg.senderId === user.id;
+
+          const messageDiv = document.createElement("div");
+          messageDiv.className = `mb-3 ${isMyMessage ? "text-right" : "text-left"}`;
+
+          const date = new Date(msg.createdAt);
+          const timeStr = date.toLocaleTimeString("es-CO", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          messageDiv.innerHTML = `
+            <div class="inline-block max-w-[70%] ${isMyMessage ? "bg-brand" : "bg-gray-700"} rounded-lg px-4 py-2">
+              <p class="text-sm">${msg.content}</p>
+              <p class="text-xs opacity-75 mt-1">${timeStr}</p>
+            </div>
+          `;
+
+          container.appendChild(messageDiv);
+        });
+
+        // Scroll al final
+        container.scrollTop = container.scrollHeight;
+      }
+
+      async function sendMessage() {
+        const input = document.getElementById("message-input");
+        const content = input.value.trim();
+
+        if (!content || !currentMatchId) return;
+
+        const user = JSON.parse(localStorage.getItem("user"));
+        const match = await fetch(`${API_URL}/matches/${currentMatchId}`).then(
+          (r) => r.json(),
+        );
+
+        const message = {
+          matchId: currentMatchId,
+          senderId: user.id,
+          senderType: "company",
+          recipientId: match.candidateId,
+          recipientType: "candidate",
+          content: content,
+          createdAt: new Date().toISOString(),
+          read: false,
+        };
+
+        await fetch(`${API_URL}/messages`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(message),
+        });
+
+        input.value = "";
+        await loadMessages(currentMatchId);
+      }
+
+      // Permitir enviar con Enter
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("message-input");
+        if (input) {
+          input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+              sendMessage();
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
