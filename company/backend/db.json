@@ -148,23 +148,7 @@
     }
   ],
   "matches": [
-    {
-      "companyId": 1,
-      "jobId": 1,
-      "candidateId": 3,
-      "status": "contacted",
-      "createdAt": "2026-01-31T02:05:40.811Z",
-      "id": 1
-    },
-    {
-      "companyId": 1,
-      "jobId": 3,
-      "candidateId": 5,
-      "status": "contacted",
-      "createdAt": "2026-01-31T02:10:59.368Z",
-      "id": 2
-    },
-    {
+  {
       "companyId": 1,
       "jobId": 3,
       "candidateId": 6,
