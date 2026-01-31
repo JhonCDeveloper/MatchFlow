@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matches | MatchFlow</title>
+
+  <link rel="stylesheet" href="../dist/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-background-app text-text-primary font-sans">
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar dinámico -->
+    <div id="sidebar-container"></div>
+
+    <main class="flex-1 p-8 space-y-8">
+
+      <!-- Header -->
+      <div>
+        <h2 class="text-3xl font-bold">Matches</h2>
+        <p class="text-text-muted mt-1">Manage your hiring pipeline</p>
+      </div>
+
+      <!-- Pipeline Columns -->
+      <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6" id="pipeline-container">
+        <!-- JS inyecta columnas aquí -->
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Sidebar Loader -->
+  <script>
+    fetch("../components/sidebar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+
+        const links = document.querySelectorAll("aside nav a");
+        links.forEach(link => {
+          if (window.location.pathname.includes(link.getAttribute("href"))) {
+            link.classList.add("bg-background-card", "text-white");
+          }
+        });
+      });
+  </script>
+
+  <script src="../js/pages/matches.js"></script>
+
+</body>
+</html>

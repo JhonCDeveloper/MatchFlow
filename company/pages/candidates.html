@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidates | MatchFlow</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="../dist/output.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-background-app text-text-primary font-sans">
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar dinámico -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 space-y-8">
+
+      <!-- Header -->
+      <div>
+        <h2 class="text-3xl font-bold">Candidates</h2>
+        <p class="text-text-muted mt-1">Discover available talent</p>
+      </div>
+
+      <!-- Filters -->
+      <section class="bg-background-card p-6 rounded-xl shadow-card grid md:grid-cols-4 gap-4">
+
+        <input id="filter-role" type="text" placeholder="Role"
+          class="bg-background-app p-3 rounded-lg text-sm outline-none">
+
+        <input id="filter-location" type="text" placeholder="Location"
+          class="bg-background-app p-3 rounded-lg text-sm outline-none">
+
+        <select id="filter-availability"
+          class="bg-background-app p-3 rounded-lg text-sm outline-none">
+          <option value="all">All</option>
+          <option value="true">Open to Work</option>
+        </select>
+
+        <button id="btn-search"
+          class="bg-brand hover:bg-brand-hover px-5 py-3 rounded-lg text-white text-sm">
+          Search
+        </button>
+
+      </section>
+
+      <!-- Candidates List -->
+      <section class="bg-background-card p-6 rounded-xl shadow-card">
+
+        <div class="flex justify-between items-center mb-4">
+          <h4 class="font-semibold">Available Candidates</h4>
+          <span id="candidates-count" class="text-text-muted text-sm"></span>
+        </div>
+
+        <div id="candidates-container" class="space-y-4">
+          <!-- JS renderiza candidatos aquí -->
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Sidebar Loader Script -->
+  <script>
+    fetch("../components/sidebar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+
+        // Resaltar botón activo
+        const links = document.querySelectorAll("aside nav a");
+        links.forEach(link => {
+          if (window.location.pathname.includes(link.getAttribute("href"))) {
+            link.classList.add("bg-background-card", "text-white");
+          }
+        });
+      });
+  </script>
+
+  <!-- Candidates Logic -->
+  <script src="../js/pages/candidates.js"></script>
+
+</body>
+</html>
