@@ -27,7 +27,7 @@
       "password": "123",
       "name": "Smith",
       "role": "candidate",
-      "openToWork": false,
+      "openToWork": true,
       "profile": {
         "title": "UX/UI Designer",
         "skills": [
@@ -40,51 +40,6 @@
       "contactInfo": {
         "phone": "+1 555 987 6543"
       }
-    },
-    {
-      "id": "3",
-      "email": "hr@techcorp.com",
-      "password": "123",
-      "name": "Tech ",
-      "role": "company",
-      "companyInfo": {
-        "industry": "Software Development",
-        "description": "Leading provider of enterprise technology solutions."
-      }
-    },
-    {
-      "id": "4",
-      "email": "hr@startupex.com",
-      "password": "123",
-      "name": "StartupEX",
-      "role": "company",
-      "companyInfo": {
-        "industry": "Fintech",
-        "description": "Revolutionizing personal finance management."
-      }
-    },
-    {
-      "id": "e430",
-      "name": "test3@crudzaso.com",
-      "email": "test3@crudzaso.com",
-      "password": "123456",
-      "role": "company"
-    },
-    {
-      "id": "089d",
-      "name": "Danna",
-      "email": "danna@crudzaso.com",
-      "password": "12345",
-      "role": "candidate",
-      "openToWork": false
-    },
-    {
-      "id": "649c",
-      "name": "Danna",
-      "email": "danna@gmail.com",
-      "password": "12345",
-      "role": "candidate",
-      "openToWork": false
     }
   ],
   "jobs": [
@@ -113,12 +68,56 @@
   ],
   "matches": [
     {
-      "id": "m1",
       "companyId": "3",
       "jobId": "101",
       "candidateId": "1",
+      "status": "contacted",
+      "createdAt": "2026-02-04T07:35:34.286Z",
+      "id": 1
+    },
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "2",
       "status": "pending",
-      "createdAt": "2026-01-27T10:00:00Z"
+      "createdAt": "2026-02-04T07:35:41.408Z",
+      "id": 2
+    }
+  ],
+  "reservations": [
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "1",
+      "isActive": true,
+      "createdAt": "2026-02-04T07:35:34.305Z",
+      "id": 1
+    },
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "2",
+      "isActive": true,
+      "createdAt": "2026-02-04T07:35:41.420Z",
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "matchId": "1",
+      "senderId": "3",
+      "senderType": "company",
+      "recipientId": "1",
+      "recipientType": "candidate"
+    },
+    {
+      "id": "2",
+      "matchId": "1",
+      "senderId": "1",
+      "senderType": "candidate",
+      "recipientId": "3",
+      "recipientType": "company"
     }
   ]
 }
