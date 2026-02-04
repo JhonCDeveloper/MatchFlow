@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
-    "server": "json-server --watch backend/db.json --port 3000" 
+    "server": "json-server --watch backend/db.json --port 3000"
   },
   "keywords": [],
   "author": "",
