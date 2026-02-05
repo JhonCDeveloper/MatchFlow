@@ -40,6 +40,72 @@
       "contactInfo": {
         "phone": "+1 555 987 6543"
       }
+    },
+    {
+      "id": "3",
+      "email": "alex.johnson@crudzaso.com",
+      "password": "123",
+      "name": "Alex Johnson",
+      "role": "candidate",
+      "openToWork": true,
+      "profile": {
+        "title": "Full Stack Developer",
+        "skills": [
+          "Node.js",
+          "React",
+          "MongoDB",
+          "AWS"
+        ],
+        "bio": "Experienced full stack developer with 7 years in tech. Open to remote opportunities."
+      },
+      "contactInfo": {
+        "phone": "+1 555 234 5678",
+        "linkedin": "linkedin.com/in/alexjohnson"
+      }
+    },
+    {
+      "id": "4",
+      "email": "maria.garcia@crudzaso.com",
+      "password": "123",
+      "name": "Maria Garcia",
+      "role": "candidate",
+      "openToWork": false,
+      "profile": {
+        "title": "Data Scientist",
+        "skills": [
+          "Python",
+          "TensorFlow",
+          "SQL",
+          "Tableau"
+        ],
+        "bio": "Currently employed but interested in future opportunities."
+      },
+      "contactInfo": {
+        "phone": "+1 555 345 6789",
+        "linkedin": "linkedin.com/in/mariagarcia"
+      }
+    },
+    {
+      "id": "5",
+      "email": "david.lee@crudzaso.com",
+      "password": "123",
+      "name": "David Lee",
+      "role": "candidate",
+      "openToWork": true,
+      "profile": {
+        "title": "DevOps Engineer",
+        "skills": [
+          "Docker",
+          "Kubernetes",
+          "CI/CD",
+          "Linux"
+        ],
+        "bio": "Infrastructure and DevOps specialist looking for challenging projects."
+      },
+      "contactInfo": {
+        "phone": "+1 555 456 7890",
+        "linkedin": "linkedin.com/in/davidlee"
+      }
     }
   ],
   "jobs": [
@@ -62,6 +128,39 @@
       "requirements": [
         "Portfolio",
         "Figma"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "103",
+      "companyId": "3",
+      "title": "Backend Developer",
+      "description": "Build scalable APIs using Node.js and Express.",
+      "requirements": [
+        "5+ years Node.js",
+        "Database design"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "104",
+      "companyId": "5",
+      "title": "DevOps Engineer",
+      "description": "Deploy and maintain our cloud infrastructure on AWS.",
+      "requirements": [
+        "AWS certified",
+        "Kubernetes experience"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "105",
+      "companyId": "4",
+      "title": "Frontend Engineer",
+      "description": "Create responsive web applications with modern frameworks.",
+      "requirements": [
+        "Vue.js or React",
+        "CSS expertise"
       ],
       "status": "active"
     }

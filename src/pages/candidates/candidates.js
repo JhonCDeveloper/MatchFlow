@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ================================= */
 async function loadCandidates(filters = {}) {
   try {
-    let url = `${API_URL}/candidates?openToWork=true`;
+    // ✅ ARREGLADO: Usar endpoint correcto /users con filtros
+    let url = `${API_URL}/users?role=candidate&openToWork=true`;
 
     const res = await fetch(url);
     let candidates = await res.json();
