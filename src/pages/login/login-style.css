@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Color variables for the dark theme */
+    --bg-body: #0b0f19;
+    --bg-card: #151b26;
+    --bg-input: #080a10;
+    --text-main: #fff;
+    --text-sec: #94a3b8;
+    /* Button gradient colors */
+    --btn-start: #3b5c8d;
+    --btn-end: #2a4065;
+}
+
+body {
+    background: radial-gradient(circle at 50% 0%, #1c2638 0%, #0b0f19 70%), var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Auth Card Container */
+.auth-card {
+    background: var(--bg-card);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px -10px rgba(0,0,0,0.9);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+}
+
+/* Icons inside input fields */
+.input-icon {
+    position: absolute;
+    top: 38px;
+    left: 12px;
+    color: #475569;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+/* Bootstrap overrides for dark theme inputs */
+.form-control, .form-select {
+    background: var(--bg-input) !important;
+    border: 1px solid #1e293b !important;
+    color: #fff !important;
+    padding: 0.7rem 0.7rem 0.7rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: none !important;
+}
+
+.form-select.ps-3 { 
+    padding-left: 1rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--btn-start) !important;
+    box-shadow: 0 0 0 3px rgba(59, 92, 141, 0.3) !important;
+}
+
+/* Primary Button with Gradient */
+.btn-primary {
+    background: linear-gradient(180deg, var(--btn-start), var(--btn-end));
+    border: 1px solid #1e293b;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #486a9e, var(--btn-start));
+    transform: translateY(-1px);
+}
+
+/* Checkbox Customization */
+.form-check-input {
+    background-color: var(--bg-input);
+    border-color: #1e293b;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--btn-start);
+    border-color: var(--btn-start);
+}
+
+/* Utility class to hide elements */
+.d-none { 
+    display: none !important; 
+}
