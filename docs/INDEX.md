@@ -19,6 +19,16 @@
 **Propósito:** Reporte de problemas técnicos identificados  
 **Estado:** ✅ Actualizado post-reorganización
 
+### 4. **ANÁLISIS_ENDPOINTS.md** 📡 (NUEVO)
+**Propósito:** Análisis de qué % de errores son por problemas de endpoints  
+**Estado:** ✅ Creado post-revisión de db.json  
+
+**Resultado:** 30% de los 27 errores (8 errores) son causados por:
+- Endpoints que no existen en db.json (/candidates, /interviews, /applications)
+- API_URL inconsistente o undefined
+- Hardcoded IDs en lugar de dinámicos
+- N+1 Query problems
+
 ---
 
 ## 📊 Estado del Proyecto
@@ -28,7 +38,7 @@
 ✅ **Respaldos:** Creados en carpeta `_archived/`  
 ✅ **Documentación:** Actualizada  
 
-⏳ **Problemas Técnicos:** 27 identificados (ver AUDIT_REPORT.md)  
+⏳ **Problemas Técnicos:** 27 identificados (8 por endpoints - 30%)  
 ⏳ **Eliminación Final:** Pendiente de testing
 
 **Última actualización:** Febrero 5, 2026
