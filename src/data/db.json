@@ -2,105 +2,44 @@
   "users": [
     {
       "id": "1",
-      "email": "john.smith@crudzaso.com",
+      "email": "test1@crudzaso.com",
       "password": "123",
-      "name": "John Smith",
+      "name": "John",
       "role": "candidate",
       "openToWork": true,
       "profile": {
         "title": "Senior Frontend Developer",
-        "bio": "Passionate developer with 5 years of experience building web applications. Expert in React and modern web technologies.",
-        "avatar": "https://i.pravatar.cc/150?img=1",
-        "profession": "Desarrollador Frontend",
         "skills": [
           "React",
-          "JavaScript",
-          "TypeScript",
           "Bootstrap",
-          "CSS",
-          "Responsive Design"
+          "JavaScript"
         ],
-        "languages": [
-          {
-            "name": "English",
-            "level": "Native"
-          },
-          {
-            "name": "Spanish",
-            "level": "B2"
-          }
-        ],
-        "experience": [
-          {
-            "company": "TechCorp Solutions",
-            "position": "Frontend Developer",
-            "startDate": "2021-06",
-            "endDate": "2024-12",
-            "description": "Developed responsive user interfaces using React, collaborated with designers and backend teams."
-          },
-          {
-            "company": "WebDev Studios",
-            "position": "Junior Frontend Developer",
-            "startDate": "2020-02",
-            "endDate": "2021-05",
-            "description": "Built static websites and began learning modern JavaScript frameworks."
-          }
-        ]
+        "bio": "Passionate developer with 5 years of experience building web applications."
       },
       "contactInfo": {
         "phone": "+1 555 019 2834",
-        "linkedin": "linkedin.com/in/johnsmith"
-      },
-      "reservedBy": null,
-      "reservedForOffer": null
+        "linkedin": "linkedin.com/in/test"
+      }
     },
     {
       "id": "2",
-      "email": "smith.designer@crudzaso.com",
+      "email": "test2@crudzaso.com",
       "password": "123",
-      "name": "Smith Johnson",
+      "name": "Smith",
       "role": "candidate",
       "openToWork": true,
       "profile": {
         "title": "UX/UI Designer",
-        "bio": "Creative designer focused on creating intuitive user experiences and beautiful interfaces. Expertise in design systems.",
-        "avatar": "https://i.pravatar.cc/150?img=5",
-        "profession": "Diseñador UX/UI",
         "skills": [
           "Figma",
           "Adobe XD",
-          "CSS",
-          "User Research",
-          "Wireframing",
-          "Prototyping",
-          "Design Systems"
+          "CSS"
         ],
-        "languages": [
-          {
-            "name": "English",
-            "level": "Native"
-          },
-          {
-            "name": "Spanish",
-            "level": "B1"
-          }
-        ],
-        "experience": [
-          {
-            "company": "InnovaDesign Studio",
-            "position": "UX/UI Designer",
-            "startDate": "2022-03",
-            "endDate": "2024-12",
-            "description": "Led design of multiple digital products, conducted user research, created design systems."
-          }
-        ]
+        "bio": "Designer focused on creating intuitive user experiences."
       },
       "contactInfo": {
-        "phone": "+1 555 987 6543",
-        "linkedin": "linkedin.com/in/smithjohnson"
-      },
-      "reservedBy": null,
-      "reservedForOffer": null
+        "phone": "+1 555 987 6543"
+      }
     },
     {
       "id": "3",
@@ -111,45 +50,18 @@
       "openToWork": true,
       "profile": {
         "title": "Full Stack Developer",
-        "bio": "Experienced full stack developer with 7 years in tech. Open to remote opportunities. MERN stack specialist.",
-        "avatar": "https://i.pravatar.cc/150?img=12",
-        "profession": "Desarrollador Full Stack",
         "skills": [
-          "JavaScript",
-          "React",
           "Node.js",
+          "React",
           "MongoDB",
-          "Express",
-          "AWS",
-          "Docker",
-          "Agile"
+          "AWS"
         ],
-        "languages": [
-          {
-            "name": "English",
-            "level": "B2"
-          },
-          {
-            "name": "Spanish",
-            "level": "B1"
-          }
-        ],
-        "experience": [
-          {
-            "company": "NextGen Apps",
-            "position": "Full Stack Developer",
-            "startDate": "2018-01",
-            "endDate": "2024-12",
-            "description": "Built and maintained full-stack web applications using the MERN stack in agile, cross-functional teams."
-          }
-        ]
+        "bio": "Experienced full stack developer with 7 years in tech. Open to remote opportunities."
       },
       "contactInfo": {
         "phone": "+1 555 234 5678",
         "linkedin": "linkedin.com/in/alexjohnson"
-      },
-      "reservedBy": null,
-      "reservedForOffer": null
+      }
     },
     {
       "id": "4",
@@ -160,43 +72,18 @@
       "openToWork": false,
       "profile": {
         "title": "Data Scientist",
-        "bio": "Currently employed but interested in future opportunities. Expert in ML and data analysis.",
-        "avatar": "https://i.pravatar.cc/150?img=9",
-        "profession": "Data Scientist",
         "skills": [
           "Python",
           "TensorFlow",
           "SQL",
-          "Tableau",
-          "Machine Learning",
-          "Data Visualization"
+          "Tableau"
         ],
-        "languages": [
-          {
-            "name": "Spanish",
-            "level": "Native"
-          },
-          {
-            "name": "English",
-            "level": "B2"
-          }
-        ],
-        "experience": [
-          {
-            "company": "Insight Data Co",
-            "position": "Data Scientist",
-            "startDate": "2020-09",
-            "endDate": "2024-12",
-            "description": "Analyzed large datasets, built ML models, and delivered actionable insights to support business decisions."
-          }
-        ]
+        "bio": "Currently employed but interested in future opportunities."
       },
       "contactInfo": {
         "phone": "+1 555 345 6789",
         "linkedin": "linkedin.com/in/mariagarcia"
-      },
-      "reservedBy": null,
-      "reservedForOffer": null
+      }
     },
     {
       "id": "5",
@@ -207,342 +94,129 @@
       "openToWork": true,
       "profile": {
         "title": "DevOps Engineer",
-        "bio": "Infrastructure and DevOps specialist looking for challenging projects. Cloud-native technologies expert.",
-        "avatar": "https://i.pravatar.cc/150?img=13",
-        "profession": "DevOps Engineer",
         "skills": [
           "Docker",
           "Kubernetes",
           "CI/CD",
-          "Linux",
-          "AWS",
-          "Terraform",
-          "Jenkins"
+          "Linux"
         ],
-        "languages": [
-          {
-            "name": "English",
-            "level": "B2"
-          },
-          {
-            "name": "Spanish",
-            "level": "A2"
-          }
-        ],
-        "experience": [
-          {
-            "company": "CloudCore Solutions",
-            "position": "DevOps Engineer",
-            "startDate": "2019-11",
-            "endDate": "2024-12",
-            "description": "Managed cloud infrastructure, implemented CI/CD pipelines, orchestrated containerized applications."
-          }
-        ]
+        "bio": "Infrastructure and DevOps specialist looking for challenging projects."
       },
       "contactInfo": {
         "phone": "+1 555 456 7890",
         "linkedin": "linkedin.com/in/davidlee"
-      },
-      "reservedBy": null,
-      "reservedForOffer": null
-    },
-    {
-      "id": "6",
-      "email": "contact@techcorp.com",
-      "password": "123",
-      "name": "TechCorp Solutions",
-      "role": "company",
-      "profile": {
-        "description": "Empresa líder en desarrollo de software empresarial y soluciones cloud.",
-        "industry": "Tecnología",
-        "avatar": "https://ui-avatars.com/api/?name=TechCorp+Solutions&background=0D8ABC&color=fff&size=150"
-      },
-      "contactInfo": {
-        "phone": "+1 601 234 5678"
-      }
-    },
-    {
-      "id": "7",
-      "email": "hello@innovadesign.com",
-      "password": "123",
-      "name": "InnovaDesign Studio",
-      "role": "company",
-      "profile": {
-        "description": "Agencia creativa especializada en diseño digital y experiencia de usuario.",
-        "industry": "Diseño y Marketing",
-        "avatar": "https://ui-avatars.com/api/?name=InnovaDesign+Studio&background=FF6B6B&color=fff&size=150"
-      },
-      "contactInfo": {
-        "phone": "+1 602 345 6789"
-      }
-    },
-    {
-      "id": "8",
-      "email": "info@dataminds.com",
-      "password": "123",
-      "name": "DataMinds Analytics",
-      "role": "company",
-      "profile": {
-        "description": "Consultora especializada en análisis de datos y business intelligence.",
-        "industry": "Consultoría",
-        "avatar": "https://ui-avatars.com/api/?name=DataMinds+Analytics&background=4ECDC4&color=fff&size=150"
-      },
-      "contactInfo": {
-        "phone": "+1 603 456 7890"
-      }
-    },
-    {
-      "id": "9",
-      "email": "team@startuphub.co",
-      "password": "123",
-      "name": "StartupHub Medellín",
-      "role": "company",
-      "profile": {
-        "description": "Aceleradora de startups tecnológicas enfocada en innovación.",
-        "industry": "Startups",
-        "avatar": "https://ui-avatars.com/api/?name=StartupHub+Medellin&background=F7B731&color=fff&size=150"
-      },
-      "contactInfo": {
-        "phone": "+1 604 567 8901"
       }
     }
   ],
   "jobs": [
     {
       "id": "101",
-      "companyId": "6",
-      "title": "Desarrollador Frontend Senior",
-      "description": "Buscamos un desarrollador frontend con experiencia en React para liderar proyectos de aplicaciones web empresariales. Trabajarás con tecnologías modernas y un equipo colaborativo.",
-      "profession": "Desarrollador Frontend",
-      "details": {
-        "typeContract": "indefinido",
-        "location": "Medellín",
-        "mode": "remoto",
-        "salary": "$2.550.000"
-      },
+      "companyId": "3",
+      "title": "React Developer",
+      "description": "We are looking for a React expert for an international project.",
       "requirements": [
-        "3+ años experiencia con React",
-        "JavaScript/TypeScript avanzado",
-        "Experiencia con Bootstrap o Tailwind",
-        "Inglés B2 mínimo"
+        "3+ years exp",
+        "English B2"
       ],
-      "isActive": true,
-      "deadline": "2026-02-15T23:59:59Z",
-      "createdAt": "2026-01-15T10:00:00Z"
+      "status": "active"
     },
     {
       "id": "102",
-      "companyId": "7",
-      "title": "Diseñador UX/UI Junior",
-      "description": "Buscamos diseñador creativo para trabajar en proyectos de branding y diseño digital. Oportunidad para crecer en una agencia innovadora.",
-      "profession": "Diseñador UX/UI",
-      "details": {
-        "typeContract": "obra o labor",
-        "location": "Medellín",
-        "mode": "presencial",
-        "salary": "$2.100.000"
-      },
+      "companyId": "4",
+      "title": "Product Designer",
+      "description": "Design the future of our mobile app.",
       "requirements": [
-        "Dominio de Figma o Adobe XD",
-        "Portfolio de proyectos",
-        "Conocimiento de diseño responsivo",
-        "Español fluido"
+        "Portfolio",
+        "Figma"
       ],
-      "isActive": true,
-      "deadline": "2026-02-10T23:59:59Z",
-      "createdAt": "2026-01-18T09:00:00Z"
+      "status": "active"
     },
     {
       "id": "103",
-      "companyId": "6",
-      "title": "Desarrollador Full Stack",
-      "description": "Únete a nuestro equipo para desarrollar soluciones completas usando tecnologías modernas. MERN stack, ambiente colaborativo.",
-      "profession": "Desarrollador Full Stack",
-      "details": {
-        "typeContract": "indefinido",
-        "location": "Bogotá",
-        "mode": "híbrido",
-        "salary": "$3.200.000"
-      },
+      "companyId": "3",
+      "title": "Backend Developer",
+      "description": "Build scalable APIs using Node.js and Express.",
       "requirements": [
-        "3+ años con JavaScript/Node.js",
-        "Experiencia en React",
-        "MongoDB o PostgreSQL",
-        "REST APIs"
+        "5+ years Node.js",
+        "Database design"
       ],
-      "isActive": true,
-      "deadline": "2026-02-20T23:59:59Z",
-      "createdAt": "2026-01-20T14:30:00Z"
+      "status": "active"
     },
     {
       "id": "104",
-      "companyId": "8",
-      "title": "Analista de Datos",
-      "description": "Analista para procesar grandes volúmenes de datos y generar insights de negocio. Trabajo con herramientas modernas de BI.",
-      "profession": "Data Analyst",
-      "details": {
-        "typeContract": "indefinido",
-        "location": "Cali",
-        "mode": "remoto",
-        "salary": "$2.800.000"
-      },
+      "companyId": "5",
+      "title": "DevOps Engineer",
+      "description": "Deploy and maintain our cloud infrastructure on AWS.",
       "requirements": [
-        "SQL avanzado",
-        "Python para análisis",
-        "Power BI o Tableau",
-        "Estadística básica"
+        "AWS certified",
+        "Kubernetes experience"
       ],
-      "isActive": true,
-      "deadline": "2026-02-25T23:59:59Z",
-      "createdAt": "2026-01-22T11:00:00Z"
+      "status": "active"
     },
     {
       "id": "105",
-      "companyId": "9",
-      "title": "Backend Developer",
-      "description": "Desarrollador backend para crear APIs y microservicios escalables. Stack technology: Node.js, AWS, Docker.",
-      "profession": "Desarrollador Backend",
-      "details": {
-        "typeContract": "prestación de servicios",
-        "location": "Medellín",
-        "mode": "híbrido",
-        "salary": "$3.500.000"
-      },
+      "companyId": "4",
+      "title": "Frontend Engineer",
+      "description": "Create responsive web applications with modern frameworks.",
       "requirements": [
-        "5+ años con Node.js/Python",
-        "Diseño de APIs REST",
-        "Experiencia con Docker",
-        "AWS o GCP"
+        "Vue.js or React",
+        "CSS expertise"
       ],
-      "isActive": true,
-      "deadline": "2026-02-28T23:59:59Z",
-      "createdAt": "2026-01-25T16:00:00Z"
-    },
-    {
-      "id": "106",
-      "companyId": "7",
-      "title": "Senior UX Designer",
-      "description": "Diseñador UX senior para liderar proyectos de investigación y diseño centrado en el usuario. Mentorearás a juniors.",
-      "profession": "Diseñador UX/UI",
-      "details": {
-        "typeContract": "indefinido",
-        "location": "Bogotá",
-        "mode": "presencial",
-        "salary": "$4.000.000"
-      },
-      "requirements": [
-        "7+ años en diseño UX/UI",
-        "Experiencia liderando equipos",
-        "User research avanzado",
-        "Design systems"
-      ],
-      "isActive": false,
-      "deadline": "2026-01-20T23:59:59Z",
-      "createdAt": "2026-01-10T08:00:00Z"
-    },
-    {
-      "id": "107",
-      "companyId": "6",
-      "title": "DevOps Engineer",
-      "description": "Especialista en infraestructura cloud para mantener y mejorar nuestros sistemas. Kubernetes, Docker, AWS.",
-      "profession": "DevOps Engineer",
-      "details": {
-        "typeContract": "indefinido",
-        "location": "Medellín",
-        "mode": "remoto",
-        "salary": "$3.800.000"
-      },
-      "requirements": [
-        "4+ años en DevOps",
-        "Kubernetes avanzado",
-        "AWS certified",
-        "CI/CD pipelines"
-      ],
-      "isActive": true,
-      "deadline": "2026-03-05T23:59:59Z",
-      "createdAt": "2026-01-28T13:00:00Z"
+      "status": "active"
     }
   ],
   "matches": [
     {
-      "id": 1,
-      "companyId": "6",
-      "candidateId": "1",
+      "companyId": "3",
       "jobId": "101",
-      "status": "pending",
-      "createdAt": "2026-02-04T07:35:34.286Z"
-    },
-    {
-      "id": 2,
-      "companyId": "6",
-      "candidateId": "3",
-      "jobId": "103",
+      "candidateId": "1",
       "status": "contacted",
-      "createdAt": "2026-02-04T08:15:41.408Z"
+      "createdAt": "2026-02-04T07:35:34.286Z",
+      "id": 1
     },
     {
-      "id": 3,
-      "companyId": "7",
+      "companyId": "3",
+      "jobId": "101",
       "candidateId": "2",
-      "jobId": "102",
       "status": "pending",
-      "createdAt": "2026-02-04T09:30:00.000Z"
-    },
-    {
-      "id": 4,
-      "companyId": "8",
-      "candidateId": "5",
-      "jobId": "104",
-      "status": "contacted",
-      "createdAt": "2026-02-04T10:45:22.500Z"
-    },
-    {
-      "id": 5,
-      "companyId": "9",
-      "candidateId": "5",
-      "jobId": "105",
-      "status": "pending",
-      "createdAt": "2026-02-04T11:20:15.700Z"
+      "createdAt": "2026-02-04T07:35:41.408Z",
+      "id": 2
     }
   ],
   "reservations": [
     {
-      "id": 1,
-      "companyId": "6",
+      "companyId": "3",
       "jobId": "101",
       "candidateId": "1",
       "isActive": true,
-      "createdAt": "2026-02-04T07:35:34.305Z"
+      "createdAt": "2026-02-04T07:35:34.305Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "companyId": "7",
-      "jobId": "102",
+      "companyId": "3",
+      "jobId": "101",
       "candidateId": "2",
-      "isActive": false,
-      "createdAt": "2026-02-04T09:30:15.420Z"
+      "isActive": true,
+      "createdAt": "2026-02-04T07:35:41.420Z",
+      "id": 2
     }
   ],
   "messages": [
     {
       "id": "1",
       "matchId": "1",
-      "senderId": "6",
+      "senderId": "3",
       "senderType": "company",
       "recipientId": "1",
-      "recipientType": "candidate",
-      "content": "¡Hola! Nos interesa tu perfil para nuestra vacante. ¿Te gustaría una entrevista?",
-      "createdAt": "2026-02-04T12:00:00Z"
+      "recipientType": "candidate"
     },
     {
       "id": "2",
       "matchId": "1",
       "senderId": "1",
       "senderType": "candidate",
-      "recipientId": "6",
-      "recipientType": "company",
-      "content": "¡Gracias! Sí, me encantaría. ¿Cuándo podríamos agendar?",
-      "createdAt": "2026-02-04T13:30:00Z"
+      "recipientId": "3",
+      "recipientType": "company"
     }
   ]
 }
