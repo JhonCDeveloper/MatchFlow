@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interviews | MatchFlow</title>
+
+  <link rel="stylesheet" href="../dist/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-background-app text-text-primary font-sans">
+
+<div class="flex min-h-screen">
+  <div id="sidebar-container"></div>
+
+  <main class="flex-1 p-8 space-y-8">
+
+    <div>
+      <h2 class="text-3xl font-bold">Interviews</h2>
+      <p class="text-text-muted mt-1">Manage scheduled interviews</p>
+    </div>
+
+    <section class="bg-background-card p-6 rounded-xl shadow-card">
+      <div class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Upcoming Interviews</h4>
+        <span id="interview-count" class="text-text-muted text-sm"></span>
+      </div>
+
+      <div id="interviews-container" class="space-y-4"></div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+fetch("../components/sidebar.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("sidebar-container").innerHTML = html;
+  });
+</script>
+
+<script src="../js/pages/interviews.js"></script>
+</body>
+</html>

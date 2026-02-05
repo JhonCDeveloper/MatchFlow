@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jobs | MatchFlow</title>
+
+  <link rel="stylesheet" href="../dist/output.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-background-app text-text-primary font-sans">
+
+<div class="flex min-h-screen">
+  <div id="sidebar-container"></div>
+
+  <main class="flex-1 p-8 space-y-8">
+
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-3xl font-bold">Jobs</h2>
+        <p class="text-text-muted mt-1">Manage your job postings</p>
+      </div>
+      <button class="bg-brand text-white px-5 py-3 rounded-lg">Create Job</button>
+    </div>
+
+    <section class="bg-background-card p-6 rounded-xl shadow-card">
+      <div class="flex justify-between mb-4">
+        <h4 class="font-semibold">Your Jobs</h4>
+        <span id="jobs-count" class="text-text-muted text-sm"></span>
+      </div>
+      <div id="jobs-container" class="space-y-4"></div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+fetch("../components/sidebar.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("sidebar-container").innerHTML = html;
+  });
+</script>
+
+<script src="../js/pages/jobs.js"></script>
+</body>
+</html>

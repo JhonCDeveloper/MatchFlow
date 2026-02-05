@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "test1@crudzaso.com",
+      "password": "123",
+      "name": "John",
+      "role": "candidate",
+      "openToWork": true,
+      "profile": {
+        "title": "Senior Frontend Developer",
+        "skills": [
+          "React",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "bio": "Passionate developer with 5 years of experience building web applications."
+      },
+      "contactInfo": {
+        "phone": "+1 555 019 2834",
+        "linkedin": "linkedin.com/in/test"
+      }
+    },
+    {
+      "id": "2",
+      "email": "test2@crudzaso.com",
+      "password": "123",
+      "name": "Smith",
+      "role": "candidate",
+      "openToWork": true,
+      "profile": {
+        "title": "UX/UI Designer",
+        "skills": [
+          "Figma",
+          "Adobe XD",
+          "CSS"
+        ],
+        "bio": "Designer focused on creating intuitive user experiences."
+      },
+      "contactInfo": {
+        "phone": "+1 555 987 6543"
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "id": "101",
+      "companyId": "3",
+      "title": "React Developer",
+      "description": "We are looking for a React expert for an international project.",
+      "requirements": [
+        "3+ years exp",
+        "English B2"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "102",
+      "companyId": "4",
+      "title": "Product Designer",
+      "description": "Design the future of our mobile app.",
+      "requirements": [
+        "Portfolio",
+        "Figma"
+      ],
+      "status": "active"
+    }
+  ],
+  "matches": [
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "1",
+      "status": "contacted",
+      "createdAt": "2026-02-04T07:35:34.286Z",
+      "id": 1
+    },
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "2",
+      "status": "pending",
+      "createdAt": "2026-02-04T07:35:41.408Z",
+      "id": 2
+    }
+  ],
+  "reservations": [
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "1",
+      "isActive": true,
+      "createdAt": "2026-02-04T07:35:34.305Z",
+      "id": 1
+    },
+    {
+      "companyId": "3",
+      "jobId": "101",
+      "candidateId": "2",
+      "isActive": true,
+      "createdAt": "2026-02-04T07:35:41.420Z",
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "matchId": "1",
+      "senderId": "3",
+      "senderType": "company",
+      "recipientId": "1",
+      "recipientType": "candidate"
+    },
+    {
+      "id": "2",
+      "matchId": "1",
+      "senderId": "1",
+      "senderType": "candidate",
+      "recipientId": "3",
+      "recipientType": "company"
+    }
+  ]
+}
