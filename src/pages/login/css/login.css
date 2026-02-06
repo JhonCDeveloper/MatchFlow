@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   Variables
+========================= */
+:root {
+  --bg-body: #0b0f19;
+  --bg-card: #151b26;
+  --bg-input: #080a10;
+
+  --text-main: #ffffff;
+  --text-sec: #94a3b8;
+  --text-placeholder: #64748b;
+
+  --btn-start: #3b5c8d;
+  --btn-end: #2a4065;
+
+  --border-main: #1e293b;
+  --focus-ring: rgba(59, 92, 141, 0.35);
+}
+
+/* =========================
+   Base
+========================= */
+body {
+  background:
+    radial-gradient(circle at 50% 0%, #1c2638 0%, #0b0f19 70%), var(--bg-body);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* =========================
+   Auth Card
+========================= */
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+}
+
+/* =========================
+   Inputs & Selects
+========================= */
+.form-control,
+.form-select {
+  background: var(--bg-input) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-main) !important;
+  padding: 0.7rem 0.7rem 0.7rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+/* Placeholder accessibility */
+.form-control::placeholder {
+  color: var(--text-placeholder);
+  opacity: 1;
+}
+
+/* Select without icon padding */
+.form-select.ps-3 {
+  padding-left: 1rem !important;
+}
+
+/* Focus states */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--btn-start) !important;
+  box-shadow: 0 0 0 3px var(--focus-ring) !important;
+}
+
+/* Keyboard accessibility */
+.form-control:focus-visible,
+.form-select:focus-visible,
+.btn-primary:focus-visible,
+.form-check-input:focus-visible {
+  outline: 2px solid var(--btn-start);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Input Icons
+========================= */
+.input-icon {
+  position: absolute;
+  top: 38px;
+  left: 12px;
+  color: #475569;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn-primary {
+  background: linear-gradient(180deg, var(--btn-start), var(--btn-end));
+  border: 1px solid var(--border-main);
+  padding: 0.75rem;
+  font-weight: 600;
+  width: 100%;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #486a9e, var(--btn-start));
+  transform: translateY(-1px);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary {
+    transition: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   Checkbox
+========================= */
+.form-check-input {
+  background-color: var(--bg-input);
+  border-color: var(--border-main);
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--btn-start);
+  border-color: var(--btn-start);
+}
+
+/* =========================
+   Utilities
+========================= */
+.d-none {
+  display: none !important;
+}

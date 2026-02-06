@@ -1,0 +1,25 @@
+body{
+    background-color: #0F172A;
+}
+.navbar{
+    background-color: #111827;
+}
+.nav-title, .card-title, h1, h3, h5{
+    color: #F8FAFC;
+}
+p{
+    color: #94A3B8;
+}
+.btn{
+    color: #CBD5E1;
+    text-align: start;
+}
+.btn-bg{
+    background-color: #2f374b;
+}
+.container-inicio{
+    background-color: #111827;
+}
+.card{
+    background-color: #1E293B;
+}

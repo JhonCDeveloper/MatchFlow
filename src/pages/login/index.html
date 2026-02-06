@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MatchFlow - Auth</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+  <body>
+    <main class="auth-card">
+      <header class="mb-4 text-center">
+        <h3 class="fw-bold m-0">MatchFlow</h3>
+        <p class="text-secondary small mt-1">Match-first hiring platform</p>
+      </header>
+
+      <div
+        id="auth-message"
+        class="alert d-none py-2 small text-center"
+        role="alert"
+      ></div>
+
+      <!-- LOGIN SECTION -->
+      <section id="login-section">
+        <h4 class="fw-bold mb-3">Sign In</h4>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form">
+          <div class="mb-3 position-relative">
+            <label class="small text-secondary mb-1">Email</label>
+            <i class="bi bi-envelope input-icon"></i>
+            <input
+              type="email"
+              class="form-control"
+              id="login-email"
+              placeholder="username@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <label class="small text-secondary mb-1">Password</label>
+            <i class="bi bi-lock input-icon"></i>
+            <input
+              type="password"
+              class="form-control"
+              id="login-password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-3">
+            Sign In
+          </button>
+        </form>
+        <div class="text-center small text-secondary">
+          Don't have an account?
+          <a href="#" id="show-register" class="text-white fw-bold"
+            >Create account</a
+          >
+        </div>
+      </section>
+
+      <!-- REGISTER SECTION -->
+      <section id="register-section" class="d-none">
+        <h4 class="fw-bold mb-3">Create Account</h4>
+
+        <!-- REGISTER FORM -->
+        <form id="register-form">
+          <div class="mb-3 position-relative">
+            <label class="small text-secondary mb-1">Full Name</label>
+            <i class="bi bi-person input-icon"></i>
+            <input
+              type="text"
+              class="form-control"
+              id="reg-name"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="mb-3 position-relative">
+            <label class="small text-secondary mb-1">Email</label>
+            <i class="bi bi-envelope input-icon"></i>
+            <input
+              type="email"
+              class="form-control"
+              id="reg-email"
+              placeholder="john@matchflow.com"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="small text-secondary mb-1">Role</label>
+            <select class="form-select ps-3" id="reg-role" required>
+              <option value="" disabled selected>Select your role...</option>
+              <option value="company">Company</option>
+              <option value="candidate">Candidate</option>
+            </select>
+          </div>
+
+          <div class="row g-2 mb-4">
+            <div class="col-6 position-relative">
+              <label class="small text-secondary mb-1">Password</label>
+              <i class="bi bi-lock input-icon"></i>
+              <input
+                type="password"
+                class="form-control"
+                id="reg-password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <div class="col-6 position-relative">
+              <label class="small text-secondary mb-1">Confirm</label>
+              <i class="bi bi-shield-check input-icon"></i>
+              <input
+                type="password"
+                class="form-control"
+                id="reg-confirm-password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mb-3">
+            Create Account
+          </button>
+        </form>
+        <div class="text-center small text-secondary">
+          Already have an account?
+          <a href="#" id="show-login" class="text-white fw-bold">Sign in</a>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/auth.js"></script>
+  </body>
+</html>
